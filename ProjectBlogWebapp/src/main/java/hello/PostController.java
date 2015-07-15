@@ -34,9 +34,9 @@ public class PostController {
         return "about";
     }
     
-    @RequestMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
+//    @RequestMapping("/contact")
+//    public String contact() {
+//        return "contact";
+//    }
 
 }
