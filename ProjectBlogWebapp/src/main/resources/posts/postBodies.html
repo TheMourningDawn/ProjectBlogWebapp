@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<!-- post main body -->
+	<article th:fragment="postBody">
+		<div id="postContainer" class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 col-md-2">
+					<div th:replace="postFragments :: tldr-sidebar"></div>
+				</div>
+				<div class="col-lg-6 col-md-8">
+					<div th:replace="../posts/postBodies :: 'postNumber' + ${post.postNumber}"></div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<!-- Post contents -->
+	<div th:fragment="postNumber1">
+		<p th:text="${post}"></p>
+		<div>just temp stuff for a second</div>
+	</div>
+	<div th:fragment="postNumber2">
+		I've found myself enamored by all the cool things <a href="">Adafruit</a> has in their learning section. I wanted to
+		make so many of them. With things like {insert some links} it was tough to not go with something really crazy. Since I
+		still had work to do on the <a href="">totem</a> , and I wanted something wearable, I decided to try out a pair of of
+		the ever so <s>overdone</s> <s>cliche</s> popular 'steampunk' goggles. They were even so loved on Adafruit's site that
+		they started selling <a href="">kits</a> with everything* necessary. No sense in arguing with the masses, right?
+
+		<p>Some tiny portion of the reason I wanted to try the goggles was because all the components were so small. So
+			far I'd mostly only done reasonable easy solders that weren't too close together. I'd also never had the pleasure of
+			having to fit a bunch of stuff in a small area. Not to mention my curiousity about how realistic it would be to keep
+			32 LEDs powered.</p>
+		<small>* Only includes the most basic components and a pair of costume goggles. Great if you're a beginner and
+			still learning.</small>
+		<h2 class="section-heading">The Journey</h2>
+		<div class="row">
+			<div class="col-lg-4">
+				<a th:href="@{img/goggles/IMG_20150414_190745053.jpg}"
+					onclick="event.preventDefault();blueimp.Gallery($('#tryMe a'), $('#blueimp-gallery').data());"> <img
+					class="img-responsive" src="img/goggles/IMG_20150414_190745053.jpg" alt=""></img>
+				</a> <span class="caption text-muted">These are useless as eyewear.</span>
+			</div>
+			<div class="col-lg-4">
+				<a th:href="@{img/goggles/IMG_20150415_205050608.jpg}" title="Banana" data-description="This is a banana."> <img
+					class="img-responsive" src="img/goggles/IMG_20150415_205050608.jpg" alt=""></img>
+				</a> <span class="caption text-muted">These are useless as eyewear.</span>
+			</div>
+			<div class="col-lg-4">
+				<a th:href="@{img/goggles/IMG_20150415_205627283.jpg}"> <img class="img-responsive"
+					src="img/goggles/IMG_20150415_205627283.jpg" alt=""></img>
+				</a> <span class="caption text-muted">These are useless as eyewear.</span>
+			</div>
+		</div>
+
+		<h2 class="section-heading">Result</h2>
+		<div class="row">
+			<div class="col-lg-6">
+				<a th:href="@{img/goggles/IMG_20150415_212537139.jpg}"
+					onclick="event.preventDefault();blueimp.Gallery($('#tryMe a'), $('#blueimp-gallery').data());"> <img
+					class="img-responsive" src="img/goggles/IMG_20150415_212537139.jpg" alt=""></img>
+				</a> <span class="caption text-muted">These are useless as eyewear.</span>
+			</div>
+			<div class="col-lg-6">
+				<a th:href="@{img/goggles/IMG_20150415_212051456.jpg}" title="Banana" data-description="This is a banana."> <img
+					class="img-responsive" src="img/goggles/IMG_20150415_212051456.jpg" alt=""></img>
+				</a> <span class="caption text-muted">Yup. Captions.</span>
+			</div>
+		</div>
+		<span class="caption text-muted">These are useless as eyewear.</span>s
+
+		<video width="100%" height="600" controls="true">
+			<source src="/img/goggles/VID_20150614_205944120.mp4" type="video/mp4"></source>
+		</video>
+		<span class="caption text-muted">Some sort of video</span>
+
+		<div class="row">
+			<div id="links" hidden="true"></div>
+			<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+			<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+				<!-- The container for the modal slides -->
+				<div class="slides"></div>
+				<!-- Controls for the borderless lightbox -->
+				<h3 class="title"></h3>
+				<p class="description"></p>
+				<a class="prev">‹</a> <a class="next">›</a> <a class="close">×</a> <a class="play-pause"></a>
+				<ol class="indicator"></ol>
+				<!-- The modal dialog, which will be used to wrap the lightbox content -->
+				<div class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4 class="modal-title"></h4>
+							</div>
+							<div class="modal-body next"></div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default pull-left prev">
+									<i class="glyphicon glyphicon-chevron-left"></i> Previous
+								</button>
+								<button type="button" class="btn btn-primary next">
+									Next <i class="glyphicon glyphicon-chevron-right"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
