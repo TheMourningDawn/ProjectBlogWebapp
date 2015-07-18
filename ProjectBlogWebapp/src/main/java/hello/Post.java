@@ -6,18 +6,13 @@ import org.springframework.data.annotation.Id;
 public class Post {
 	@Id
 	private String id;
+	private int postNumber;
 	
 	private String title;
 	private String subTitle;
 	private String headerImagePath;
 	private String postedBy;
 	private Date postDate;
-	
-	private int postNumber;
-	
-	//Not even so sure I want to do this? If i want to write the html myself,
-	//I might end up doing something stupid like using fragments and accociating an id...
-	//private SOMEMARKUPEXCAPEDTYPE body
 	
 	public Post() {}
 	
@@ -112,12 +107,12 @@ public class Post {
 		this.title = title;
 	}
 
-	public String getSubTitle() {
-		return subTitle;
-	}
-
 	public void setSubTitle(String subTitle) {
 		this.subTitle = subTitle;
+	}
+
+	public String getSubTitle() {
+		return subTitle;
 	}
 
 	public String getPostedBy() {

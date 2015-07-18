@@ -1,0 +1,38 @@
+{
+    "postNumber": 1,
+    "title": "The Title",
+    "subTitle": "The Subtitle",
+    "headerImagePath": "src/main/webapp/img/someimage.jpg",
+    "postedBy": "Po sting Person",
+    "postDate": "01/01/2000",
+    "guideLink": "http://awesomeplace.com",
+    "supplies": [
+        {
+            "partDescription": "Costume Goggles",
+            "links": [
+                {
+                    "linkDescription": "Adafruit",
+                    "link": "http://adafuit.com/item1"
+                },
+                {
+                    "linkDescription": "Adafruit2",
+                    "link": "http://adafuit.com/item2"
+                },
+                {
+                    "linkDescription": "Adafruit3",
+                    "link": "http://adafuit.com/item3"
+                }
+            ]
+        }
+    ],
+    "furtherReading": [
+        {
+            "readingDescription": "furtherReading1",
+            "link": "http://furtherReadingURL1"
+        },
+        {
+            "readingDescription": "furtherReading2",
+            "link": "http://furtherReadingURL2"
+        }
+    ]
+}

@@ -9,82 +9,107 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-image-gallery.min.css}" />
 <style type="text/css">
 .post-heading {
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #postContainer {
-  margin-left: 2%;
-  margin-right: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.btn-link {
+	padding: 0px;
 }
 </style>
 <!-- Custom Fonts -->
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
 <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'></link>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet'
-  type='text/css'></link>
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	rel='stylesheet' type='text/css'></link>
 <title th:text="${post.title}">This be a post</title>
 </head>
 <body>
-  <div th:replace="layoutFragments :: nav"></div>
-  <!-- Page Header -->
-  <!-- Set your background image for this header on the line below. -->
-  <header class="intro-header" th:style="'background-image: url(' + @{${post.headerImagePath}} +')'">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div class="post-heading">
-            <h1 th:text="${post.title}">Neopixel Goggles</h1>
-            <h2 class="subheading" th:text="${post.subTitle}">They were cool, and then I lost them.</h2>
-            <!--<span class="meta">Posted by <a href="#" th:text="${post.postedBy}">Charlie Hendricks</a> on <span th:text="${post.postDate}">August 24, 2014</span></span>-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- Post Content -->
-  <article>
-    <div id="postContainer" class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-2">
-          <div class="well well-sm float-left">
-            <h3 class="text-center">tl;dr</h3>
-            <div class="row">
-              <div class="col-lg-5 text-right">
-                <b>Full Guide:</b>
-              </div>
-              <div class="col-lg-7 text-left" style="padding-left: 0px;">
-                <a href="https://learn.adafruit.com/kaleidoscope-eyes-neopixel-led-goggles-trinket-gemma/software">Kaleidoscope Eyes</a>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-5 text-right">
-                <b>Supplies:</b>
-              </div>
-              <div class="col-lg-7 text-left" style="padding-left: 0px;">
-                <ul class="list-unstyled">
-                  <li>Thing one</li>
-                  <li>Thing two</li>
-                  <li>Thing three</li>
-                  <li>Thing four</li>
-                </ul>
-              </div>
-            </div>
-            <h3 class="text-center">Further reading</h3>
-            <ul class="list-unstyled">
-              <li class="text-center"><a href="">This is useful</a></li>
-              <li class="text-center"><a href="">This too</a></li>
-              <li class="text-center"><a href="">Read me!</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-8">
-          <div th:replace="postFragments :: 'postNumber' + ${post.postNumber}"></div>
-        </div>
-      </div>
-    </div>
-  </article>
-  <hr></hr>
-  <div th:replace="layoutFragments :: footer"></div>
-  <div th:replace="layoutFragments :: jsIncludes"></div>
+	<div th:replace="layoutFragments :: nav"></div>
+	<!-- Page Header -->
+	<!-- Set your background image for this header on the line below. -->
+	<header class="intro-header" th:style="'background-image: url(' + @{${post.headerImagePath}} +')'">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<h1 th:text="${post.title}">Neopixel Goggles</h1>
+						<h2 class="subheading" th:text="${post.subTitle}">They were cool, and then I lost them.</h2>
+						<!--<span class="meta">Posted by <a href="#" th:text="${post.postedBy}">Charlie Hendricks</a> on <span th:text="${post.postDate}">August 24, 2014</span></span>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Post Content -->
+	<div th:replace="postFragments :: postBody"></div>
+	<hr></hr>
+	<!-- Footer and includes -->
+	<div th:replace="layoutFragments :: footer"></div>
+	<div th:replace="layoutFragments :: jsIncludes"></div>
+	<script type="text/javascript">
+		$(function() {
+			$(function(){
+			    $('[rel="popover"]').popover({
+			        container: 'body',
+			        html: true,
+			        content: function () {
+			            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+			            return clone;
+			        }
+			    }).click(function(e) {
+			        e.preventDefault();
+			    });
+			});
+			// Enabling Popover Example 2 - JS (hidden content and title capturing)
+			/* $("#test-goggle-link").popover();
+			$("#goggle-link").popover({
+				html : true,
+				container : 'body',
+				trigger : 'focus',
+				content : function() {
+					return $('#goggle-parts').html();
+				}
+			});
+			$("#neopixel-link").popover({
+				html : true,
+				container : 'body',
+				trigger : 'focus',
+				content : function() {
+					return $('#neopixel-parts').html();
+				}
+			}); */
+			$('[data-toggle="popover"]').popover()
+		});
+	</script>
+	<div id="goggle-parts" style="display: none">
+		<button th:each="item : ${supplies}" type="button" class="btn btn-link" onclick="location.href='${item.linkAddress}'" th:text="Adafruit">Adafruit</button>
+		<br></br>
+		<button type="button" class="btn btn-link"
+			onclick="location.href='http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&amp;field-keywords=steampunk+goggles&amp;rh=i%3Aaps%2Ck%3Asteampunk+goggles'">Amazon</button>
+		<br></br>
+		<button type="button" class="btn btn-link"
+			onclick="location.href='http://www.leevalley.com/us/wood/page.aspx?amp;cat=1%2C42207&amp;p=70788'">German Saftey Goggles</button>
+		<br></br>
+	</div>
+	<div id="neopixel-parts" style="display: none">
+		<div>
+			<button type="button" class="btn btn-link" onclick="location.href='http://www.adafruit.com/product/1463'">Adafruit
+				in this shit</button>
+		</div>
+	</div>
+	<div id="myPopover" class="hide">
+	This is a popover list:
+	<ul>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ul>
+</div>
 </body>
 </html>

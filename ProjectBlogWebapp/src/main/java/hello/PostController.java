@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PostController {
 	@Autowired
 	private PostRepository posts;
+	@Autowired
+	private HardwareItemRepository supplies;
     
     @RequestMapping("/index")
     public String index(Model model) {
@@ -26,6 +28,7 @@ public class PostController {
     public String post(@RequestParam(value="id", required=false) String id,  Model model) {
     	System.out.println(posts.findById(id));
     	model.addAttribute("post", posts.findById(id));
+    	model.addAttribute("supplies", supplies.findAll());
         return "post";
     }
     
