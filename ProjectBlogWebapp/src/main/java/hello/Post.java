@@ -1,30 +1,36 @@
 package hello;
 
 import java.util.Date;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Post {
 	@Id
 	private String id;
 	private int postNumber;
-	
+
 	private String title;
 	private String subTitle;
 	private String headerImagePath;
 	private String postedBy;
 	private Date postDate;
+
+	private Link guideLink;
 	
-	public Post() {}
+	@JsonUnwrapped
+	private List<SupplyItem> supplies;
 	
-	public Post(String title, String subTitle) {
-		this.title = title;
-		this.subTitle = subTitle;
-		this.postedBy = "Anon";
-		this.postDate = new Date();
-		this.headerImagePath = "img/defaultHeaderBackground.jpg";
+	private List<Link> furtherReading;
+
+	public Post() {
 	}
-	
-	public Post(String title, String subTitle, int postNumber) {
+
+	public Post(int postNumber, String title, String subTitle) {
 		this.title = title;
 		this.subTitle = subTitle;
 		this.postedBy = "Anon";
@@ -32,16 +38,8 @@ public class Post {
 		this.headerImagePath = "img/defaultHeaderBackground.jpg";
 		this.postNumber = postNumber;
 	}
-	
-	public Post(String title, String subTitle, String headerImagePath) {
-		this.title = title;
-		this.subTitle = subTitle;
-		this.postedBy = "Anon";
-		this.postDate = new Date();
-		this.headerImagePath = headerImagePath;
-	}
-	
-	public Post(String title, String subTitle, String headerImagePath, int postNumber) {
+
+	public Post(int postNumber, String title, String subTitle, String headerImagePath) {
 		this.title = title;
 		this.subTitle = subTitle;
 		this.postedBy = "Anon";
@@ -49,16 +47,8 @@ public class Post {
 		this.headerImagePath = headerImagePath;
 		this.postNumber = postNumber;
 	}
-	
-	public Post(String title,String subTitle, String headerImagePath, String postedBy, Date postDate){
-		this.title = title;
-		this.subTitle = subTitle;
-		this.postedBy = postedBy;
-		this.postDate = postDate;
-		this.headerImagePath = headerImagePath;
-	}
-	
-	public Post(String title,String subTitle, String headerImagePath, String postedBy, Date postDate, int postNumber){
+
+	public Post(int postNumber, String title, String subTitle, String headerImagePath, String postedBy, Date postDate) {
 		this.title = title;
 		this.subTitle = subTitle;
 		this.postedBy = postedBy;
@@ -66,8 +56,21 @@ public class Post {
 		this.headerImagePath = headerImagePath;
 		this.postNumber = postNumber;
 	}
-	
-	 public int getPostNumber() {
+
+	public Post(int postNumber, String title, String subTitle, String headerImagePath, Link guideLink,
+			List<SupplyItem> supplies, List<Link> furtherReading, String postedBy, Date postDate) {
+		this.title = title;
+		this.subTitle = subTitle;
+		this.postedBy = postedBy;
+		this.postDate = postDate;
+		this.headerImagePath = headerImagePath;
+		this.postNumber = postNumber;
+		this.guideLink = guideLink;
+		this.supplies = supplies;
+		this.furtherReading = furtherReading;
+	}
+
+	public int getPostNumber() {
 		return postNumber;
 	}
 
@@ -75,14 +78,6 @@ public class Post {
 		this.postNumber = postNumber;
 	}
 
-	@Override
-	    public String toString() {
-	        return String.format(
-	                "Post[id=%s, title='%s', subTitle='%s', postNumber='%s']",
-	                id, title, subTitle, postNumber);
-	    }
-
-	
 	public String getId() {
 		return id;
 	}
@@ -90,7 +85,7 @@ public class Post {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	public String getHeaderImagePath() {
 		return headerImagePath;
 	}
@@ -129,6 +124,37 @@ public class Post {
 
 	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
+	}
+
+	public Link getGuideLink() {
+		return guideLink;
+	}
+
+	public void setGuideLink(Link guideLink) {
+		this.guideLink = guideLink;
+	}
+
+	public List<SupplyItem> getSupplies() {
+		return supplies;
+	}
+
+	public void setSupplies(List<SupplyItem> supplies) {
+		this.supplies = supplies;
+	}
+
+	public List<Link> getFurtherReading() {
+		return furtherReading;
+	}
+
+	public void setFurtherReading(List<Link> furtherReading) {
+		this.furtherReading = furtherReading;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"Post[id=%s, postNumber='%s', title='%s', subTitle='%s', guideLink='%s', supplies='%s', furtherReading='%s']",
+				id, postNumber, title, subTitle, guideLink, supplies, furtherReading);
 	}
 
 }

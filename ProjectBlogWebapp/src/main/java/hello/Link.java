@@ -2,12 +2,19 @@ package hello;
 
 import org.springframework.data.annotation.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Link {
 	@Id
 	private String id;
 
 	private String description;
 	private String linkAddress;
+	
+	public Link() {
+		
+	}
 	
 	public Link(String description, String linkAddress) {
 		super();
@@ -37,6 +44,13 @@ public class Link {
 
 	public void setLinkAddress(String linkAddress) {
 		this.linkAddress = linkAddress;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"Link [id=%s, description='%s', link='%s']",
+				id, description, linkAddress);
 	}
 
 }

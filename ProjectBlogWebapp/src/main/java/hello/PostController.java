@@ -14,7 +14,7 @@ public class PostController {
 	@Autowired
 	private PostRepository posts;
 	@Autowired
-	private HardwareItemRepository supplies;
+	private SupplyItemRepository supplies;
     
     @RequestMapping("/index")
     public String index(Model model) {
@@ -30,6 +30,11 @@ public class PostController {
     	model.addAttribute("post", posts.findById(id));
     	model.addAttribute("supplies", supplies.findAll());
         return "post";
+    }
+    
+    @RequestMapping("/testPost") 
+    public String testPost(@RequestParam(value="id", required=false) String id,  Model model) {
+    	return "post";
     }
     
     @RequestMapping("/about")
