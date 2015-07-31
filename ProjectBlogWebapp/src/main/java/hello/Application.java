@@ -40,7 +40,7 @@ public class Application implements CommandLineRunner{
 
 		// save a couple of Posts
 		repository.save(new Post(1, "A Little Intro", ""));
-		repository.save(new Post(2, "Neopixel Goggles", "They were cool, and then I lost them.", "img/goggles/IMG_20150415_211449721.jpg"));
+		repository.save(aPost);
 		repository.save(new Post(3, "Some Placeholder", "More text for space taking.", "img/goggles/IMG_20150414_184028121.jpg", "Jake the Dog", new Date()));
 	}
 }

@@ -2,23 +2,24 @@ package hello;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
+import org.bson.types.ObjectId;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SupplyItem {
-	@Id
 	private String id;
 	
 	private String description;
 	private List<Link> links;
 	
 	public SupplyItem() {
-		
+		this.id = ObjectId.get().toString();
 	}
 	
 	public SupplyItem(String description, List<Link> links) {
+		System.out.println("======It's constructing. I can get a mongo id: " + ObjectId.get().toHexString());
+		this.id = ObjectId.get().toHexString();
 		this.description = description;
 		this.links = links;
 	}

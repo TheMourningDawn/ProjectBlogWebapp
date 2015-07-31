@@ -26,7 +26,7 @@ public class PostController {
     
     @RequestMapping("/post")
     public String post(@RequestParam(value="id", required=false) String id,  Model model) {
-    	System.out.println(posts.findById(id));
+//    	System.out.println(posts.findById(id));
     	model.addAttribute("post", posts.findById(id));
     	model.addAttribute("supplies", supplies.findAll());
         return "post";

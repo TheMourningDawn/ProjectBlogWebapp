@@ -1,26 +1,30 @@
 {
-    "postNumber": 1,
-    "title": "The Title",
-    "subTitle": "The Subtitle",
-    "headerImagePath": "src/main/webapp/img/someimage.jpg",
-    "postedBy": "Posting Person",
-    "postDate": "2000-01-01",
-    "guideLink": {"description" : "The Guide Title", "linkAddress" : "http://awesomeplace.com"},
+    "postNumber": 2,
+    "title": "Neopixel Goggles",
+    "subTitle": "They were cool, and then I lost them.",
+    "headerImagePath": "/img/goggles/IMG_20150415_211725970.jpg",
+    "postedBy": "Charlie",
+    "postDate": "2015-06-31",
+    "guideLink": {"description" : "Kaleidoscope Eyes", "linkAddress" : "https://learn.adafruit.com/kaleidoscope-eyes-neopixel-led-goggles-trinket-gemma/software"},
     "supplies": [
         {
-            "description": "Costume Goggles",
+            "description": "50mm Costume/Safety Goggles",
             "links": [
                 {
                     "description": "Adafruit",
-                    "linkAddress": "http://adafuit.com/item1"
+                    "linkAddress": "http://www.adafruit.com/product/1577"
                 },
                 {
-                    "description": "Adafruit2",
-                    "linkAddress": "http://adafuit.com/item2"
-                },
+                    "description": "German Safety Goggles",
+                    "linkAddress": "http://www.leevalley.com/us/wood/page.aspx?amp;cat=1%2C42207&amp;p=70788"
+                }
+            ]
+        }, {
+            "description": "2 x 16 LED NeoPixel Ring",
+            "links": [
                 {
-                    "description": "Adafruit3",
-                    "linkAddress": "http://adafuit.com/item3"
+                    "description": "Adafruit",
+                    "linkAddress": "http://www.adafruit.com/product/1463"
                 }
             ]
         }
