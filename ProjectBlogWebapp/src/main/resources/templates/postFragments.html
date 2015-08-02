@@ -32,7 +32,7 @@
 			<ul class="list-unstyled">
 				<li th:each="item : ${post.supplies}">
 					<div th:include="postFragments :: supply-links (supplyId=${item.id}, supplyLinks=${item.links})"></div> <a
-					type="button" class="btn btn-link" roll="button" tabindex="1" rel="popover" th:attr="data-popover-content='#supply-' + ${item.id},data-trigger='focus'"
+					type="button" class="btn btn-link" role="button" tabindex="1" rel="popover" th:attr="data-popover-content='#supply-' + ${item.id},data-trigger='focus'"
 					th:text="${item.description}">My Popover</a>
 				</li>
 			</ul>
