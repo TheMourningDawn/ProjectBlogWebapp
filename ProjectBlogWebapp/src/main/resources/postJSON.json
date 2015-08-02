@@ -27,16 +27,38 @@
                     "linkAddress": "http://www.adafruit.com/product/1463"
                 }
             ]
+        }, {
+            "description": "Small Microcontroller",
+            "links": [
+                {
+                    "description": "Adafruit Trinket 5V",
+                    "linkAddress": "http://www.adafruit.com/product/1501"
+                },{
+                    "description": "Adafruit Trinket 3.3V",
+                    "linkAddress": "http://www.adafruit.com/product/1500"
+                },{
+                    "description": "Adafruit Gemma",
+                    "linkAddress": "http://www.adafruit.com/product/1222"
+                }
+            ]
+        }, {
+            "description": "Power Source",
+            "links": [
+                {
+                    "description": "Lithium Ion Polymer Battery - 3.7v 500mAh",
+                    "linkAddress": "http://www.adafruit.com/product/1578"
+                }
+            ]
         }
     ],
     "furtherReading": [
         {
-            "description": "furtherReading1",
-            "linkAddress": "http://furtherReadingURL1"
+            "description": "Sensors",
+            "linkAddress": "https://learn.adafruit.com/steam-punk-goggles/overview"
         },
         {
-            "description": "furtherReading2",
-            "linkAddress": "http://furtherReadingURL2"
+            "description": "Bluetooth to infinity!",
+            "linkAddress": "https://learn.adafruit.com/bluetooth-neopixel-goggles/overview"
         }
     ]
 }
