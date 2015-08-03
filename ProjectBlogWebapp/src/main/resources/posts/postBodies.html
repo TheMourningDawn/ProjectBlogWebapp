@@ -40,29 +40,14 @@
 		<small>* Only includes the most basic components and a pair of costume goggles. Great if you're a beginner and
 			still learning.</small>
 		<h2 class="section-heading">The Journey</h2>
-		<div th:each="imageIndex : ${ #numbers.sequence(0, images.size(), 3)}" class="row">
-			<div class="col-lg-4">
-				<a th:href="@{'img/goggles/' + ${images[imageIndex]}}" class="thumbnail"> <img class="img-responsive"
-					th:src="'img/goggles/' + ${images[imageIndex]}" alt="..."></img>
-				</a> <span class="caption text-muted"></span>
-			</div>
-			<div class="col-lg-4">
-				<a th:if="${images[imageIndex + 1] != null}" th:href="@{'img/goggles/' + ${images[imageIndex + 1]}}"
-					class="thumbnail"> <img class="img-responsive" th:src="'img/goggles/' + ${images[imageIndex + 1]}"></img>
-				</a> <span class="caption text-muted"></span>
-			</div>
-			<div class="col-lg-4">
-				<a th:if="${(imageIndex + 2) lt images.size()}" th:href="@{'img/goggles/' + ${images[imageIndex + 2]}}"
-					class="thumbnail"> <img class="img-responsive" th:src="'img/goggles/' + ${images[imageIndex + 2]}"></img>
-				</a> <span class="caption text-muted"></span>
+		<div id="grid-thing">
+			<div th:each="item : ${images}" id="imageContainer">
+				<a th:href="@{'img/goggles/' + ${item}}"> <img class="img-responsive"
+					width="198" th:src="'img/goggles/' + ${item}" style="margin-bottom:5px;"></img>
+				</a>
+				<!-- <span class="caption text-muted"></span> -->
 			</div>
 		</div>
-		<!-- <div class="row">
-			<video width="100%" height="600" controls="true">
-				<source src="/img/goggles/VID_20150614_205944120.mp4" type="video/mp4"></source>
-			</video>
-			<span class="caption text-muted">Some sort of video</span>
-		</div> -->
 	</div>
 </body>
 </html>

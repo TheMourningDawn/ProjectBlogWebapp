@@ -24,5 +24,16 @@
 	<hr></hr>
 	<!-- Footer and includes -->
 	<div th:replace="../fragments/footer :: footer"></div>
+	
+	<script>
+		var $grid = $('#grid-thing').imagesLoaded(function() {
+			// init Masonry after all images have loaded
+			$grid.masonry({
+				// options
+				itemSelector : '#imageContainer',
+				columnWidth : 200
+			});
+		});
+	</script>
 </body>
 </html>
