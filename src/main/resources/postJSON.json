@@ -1,0 +1,64 @@
+{
+    "postNumber": 2,
+    "title": "Neopixel Goggles",
+    "subTitle": "They were cool, and then I lost them.",
+    "headerImagePath": "/img/goggles/IMG_20150415_211725970.jpg",
+    "postedBy": "Charlie",
+    "postDate": "2015-06-31",
+    "guideLink": {"description" : "Kaleidoscope Eyes", "linkAddress" : "https://learn.adafruit.com/kaleidoscope-eyes-neopixel-led-goggles-trinket-gemma/software"},
+    "supplies": [
+        {
+            "description": "50mm Costume/Safety Goggles",
+            "links": [
+                {
+                    "description": "Adafruit",
+                    "linkAddress": "http://www.adafruit.com/product/1577"
+                },
+                {
+                    "description": "German Safety Goggles",
+                    "linkAddress": "http://www.leevalley.com/us/wood/page.aspx?amp;cat=1%2C42207&amp;p=70788"
+                }
+            ]
+        }, {
+            "description": "2 x 16 LED NeoPixel Ring",
+            "links": [
+                {
+                    "description": "Adafruit",
+                    "linkAddress": "http://www.adafruit.com/product/1463"
+                }
+            ]
+        }, {
+            "description": "Small Microcontroller",
+            "links": [
+                {
+                    "description": "Adafruit Trinket 5V",
+                    "linkAddress": "http://www.adafruit.com/product/1501"
+                },{
+                    "description": "Adafruit Trinket 3.3V",
+                    "linkAddress": "http://www.adafruit.com/product/1500"
+                },{
+                    "description": "Adafruit Gemma",
+                    "linkAddress": "http://www.adafruit.com/product/1222"
+                }
+            ]
+        }, {
+            "description": "Power Source",
+            "links": [
+                {
+                    "description": "Lithium Ion Polymer Battery - 3.7v 500mAh",
+                    "linkAddress": "http://www.adafruit.com/product/1578"
+                }
+            ]
+        }
+    ],
+    "furtherReading": [
+        {
+            "description": "Sensors",
+            "linkAddress": "https://learn.adafruit.com/steam-punk-goggles/overview"
+        },
+        {
+            "description": "Bluetooth to infinity!",
+            "linkAddress": "https://learn.adafruit.com/bluetooth-neopixel-goggles/overview"
+        }
+    ]
+}
